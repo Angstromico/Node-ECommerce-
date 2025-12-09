@@ -1,144 +1,88 @@
-# 🚀 Node.js + TypeScript Starter
+# 🛒 Node.js Ecommerce Platform
 
-A **minimal** Node.js + TypeScript starter template for learning and development. Pre-configured with modern tooling so you can focus on writing code, not setting up your environment.
+A full‑stack **Ecommerce application** built with Node.js and Express, designed to demonstrate modern backend practices, clean architecture, and scalable API design.  
+This project includes user authentication, product management, shopping cart functionality, and order processing.
 
-## ✨ What's Included
+---
 
-- **🔷 TypeScript** - Strict type checking configured
-- **⚡ tsx** - Instant run without compilation (`npm run dev`)
-- **🧪 Vitest** - Fast testing framework
-- **📏 ESLint + Prettier** - Code quality and formatting
-- **🪝 Husky** - Pre-commit hooks (optional)
-- **🎯 Path Aliases** - Use `@/` instead of `../../`
+## 🚀 Features
 
-## 📋 Prerequisites
+- **User Authentication** (JWT, sessions, password hashing)
+- **Product Management** (CRUD operations for products, categories, inventory)
+- **Shopping Cart** (add/remove items, quantity updates, persistent carts)
+- **Order Management** (checkout flow, order history, payment integration placeholder)
+- **RESTful API** with clean routes and controllers
+- **Database Integration** (MongoDB or PostgreSQL depending on setup)
+- **Environment Variables** for secure configuration (`.env`)
+- **Error Handling & Validation** with middleware
+- **Scalable Architecture** (controllers, services, models, routes separated)
 
-- **Node.js** >= 18.0.0
-- **npm** >= 9.0.0
+---
 
-## 🛠️ Quick Start
+## 📂 Project Structure
 
 ```bash
-# Install dependencies
+├── src │ ├── config/ # Environment & database config │ ├── controllers/ # Route controllers │ ├── models/ # Database models │ ├── routes/ # API routes │ ├── services/ # Business logic │ └── app.js # Express app entry ├── .env # Environment variables ├── package.json └── README.md
+```
+
+## ⚙️ Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/Angstromico/Node-ECommerce-
+cd Node-ECommerce-
 npm install
+```
 
-# Start development (hot-reload)
+## 🔑 Environment Variables
+
+Create a .env file in the root directory:
+
+env
+PORT=3000
+API=/api/v1
+
+## ▶️ Running the App
+
+Start the development server:
+
+```bash
 npm run dev
+```
 
-# Build for production
-npm run build
+Or run in production mode:
 
-# Run compiled code
+```bash
 npm start
 ```
 
-## 📜 Available Scripts
+## 📡 API Endpoints (Examples)
 
-| Script             | Description                           |
-| ------------------ | ------------------------------------- |
-| `npm run dev`      | Run with hot-reload (no build needed) |
-| `npm run build`    | Compile TypeScript to JavaScript      |
-| `npm start`        | Run compiled code                     |
-| `npm test`         | Run tests in watch mode               |
-| `npm run lint`     | Check code quality                    |
-| `npm run format`   | Format code with Prettier             |
-| `npm run validate` | Run all checks                        |
+GET /api/v1/ → Hello Word
 
-## 📁 Project Structure
+GET /api/v1//users → Get users
 
-```text
-src/
-└── index.ts    # Your code goes here
-```
+## 🧪 Testing
 
-Keep it simple! Add files and folders as you learn and need them.
-
-## 🎯 Path Aliases
-
-Instead of messy relative imports:
-
-```typescript
-// ❌ Avoid
-import { something } from '../../../utils/something'
-
-// ✅ Use
-import { something } from '@/utils/something.js'
-```
-
-## 💡 Learning Tips
-
-### TypeScript Basics
-
-```typescript
-// Type annotations
-const name: string = 'John'
-const age: number = 25
-
-// Interfaces
-interface User {
-  name: string
-  age: number
-}
-
-// Functions with types
-function greet(user: User): string {
-  return `Hello, ${user.name}!`
-}
-```
-
-### Testing with Vitest
-
-Create a file like `src/example.test.ts`:
-
-```typescript
-import { describe, it, expect } from 'vitest'
-
-describe('example', () => {
-  it('should work', () => {
-    expect(1 + 1).toBe(2)
-  })
-})
-```
-
-Run tests:
+Run tests with:
 
 ```bash
 npm test
 ```
 
-## 🔧 Configuration Files
+## 📖 Future Improvements
 
-- `tsconfig.json` - TypeScript configuration (strict mode enabled)
-- `eslint.config.mjs` - ESLint rules
-- `.prettierrc.json` - Code formatting rules
-- `vitest.config.ts` - Test configuration
+- Payment gateway integration (Stripe/PayPal)
 
-Feel free to modify these as you learn!
+- Admin dashboard for product & order management
 
-## 🚀 Building for Production
+- Advanced search and filtering
 
-```bash
-npm run build   # Creates dist/ folder
-npm start       # Runs the compiled code
-```
+- Dockerized deployment
 
-## 📚 Next Steps
+- CI/CD pipeline integration
 
-1. **Learn TypeScript basics** - Types, interfaces, generics
-2. **Practice with Node.js** - File system, HTTP, async/await
-3. **Write tests** - Use Vitest to test your code
-4. **Explore the tooling** - ESLint, Prettier, tsx
+## ⚡ License
 
-## 📖 Resources
-
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Node.js Documentation](https://nodejs.org/docs/latest/api/)
-- [Vitest Documentation](https://vitest.dev/)
-
-## 📄 License
-
-MIT
-
----
-
-**Happy Learning! 🎓**
+This project is for learning and practice purposes. Feel free to fork, modify, and use it for educational or portfolio work.
