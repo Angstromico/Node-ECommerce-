@@ -42,6 +42,7 @@ Create a .env file in the root directory:
 env
 PORT=3000
 API=/api/v1
+MONGO_URI=YOUR_URL
 
 ## ▶️ Running the App
 
