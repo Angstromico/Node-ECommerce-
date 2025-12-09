@@ -59,9 +59,11 @@ npm start
 
 ## 📡 API Endpoints (Examples)
 
-GET /api/v1/ → Hello Word
+- GET /api/v1/ → Hello Word
 
-GET /api/v1//users → Get users
+- GET /api/v1/products → A list of products
+
+- POST /api/v1/products → Add a new product
 
 ## 🧪 Testing
 
