@@ -38,3 +38,39 @@ export const createProduct = async (req: Request, res: Response): Promise<Respon
       .json({ message: 'Error creating product', success: false, error })
   }
 }
+
+export const getProduct = async (req: Request, res: Response): Promise<Response> => {
+  try {
+    const product = await Product.findById(req.params.id)
+
+    if (product) return res.status(OK).json(product)
+
+    return res.status(NOT_FOUND).json({ message: 'Error fetching product' })
+  } catch (error) {
+    return res.status(INTERNAL_SERVER_ERROR).json({ message: 'Error fetching product', error })
+  }
+}
+
+export const updateProduct = async (req: Request, res: Response): Promise<Response> => {
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
+    if (product) return res.status(OK).json(product)
+
+    return res.status(NOT_FOUND).json({ message: 'Error updating product' })
+  } catch (error) {
+    return res.status(INTERNAL_SERVER_ERROR).json({ message: 'Error updating product', error })
+  }
+}
+
+export const deleteProduct = async (req: Request, res: Response): Promise<Response> => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id)
+
+    if (product) return res.status(OK).json(product)
+
+    return res.status(NOT_FOUND).json({ message: 'Error deleting product' })
+  } catch (error) {
+    return res.status(INTERNAL_SERVER_ERROR).json({ message: 'Error deleting product', error })
+  }
+}
