@@ -1,17 +1,18 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import router from './routes/index.js'
 
 dotenv.config()
 
 const app = express()
+app.use(cors())
 
 const PORT = process.env.PORT || 3000
 const API = process.env.API || '/api/v1'
 
 app.use(express.json())
-
 app.use(API, router)
 
 mongoose
